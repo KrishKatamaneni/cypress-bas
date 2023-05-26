@@ -1,0 +1,29 @@
+{
+  "name": "ccpi-cypress",
+  "scripts": {
+    "eslint-output": "eslint-output"
+  },
+  "dependencies": {
+    "@reportportal/agent-js-cypress": "^5.0.0",
+    "@testing-library/cypress": "^8.0.0",
+    "backstopjs": "^5.3.4",
+    "cypress": "^10.11.0",
+    "cypress-audit": "^1.0.0",
+    "cypress-axe": "^1.4.0",
+    "cypress-downloadfile": "^1.2.1",
+    "cypress-file-upload": "^5.0.7",
+    "cypress-multi-reporters": "^1.5.0",
+    "cypress-xpath": "^1.6.2",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-formatter-gitlab": "^2.2.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "junit-report-merger": "^2.2.2",
+    "mocha-junit-reporter": "^2.0.0",
+    "playwright": "^1.13.1",
+    "prettier": "^2.3.1",
+    "puppeteer": "^19.4.1"
+  }
+}

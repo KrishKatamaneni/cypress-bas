@@ -1,0 +1,25 @@
+# Ignore everything starting from the root
+*
+
+# Allow project specific files and folders
+!/.gitignore
+!/docker-compose.yml
+!/.gitlab-ci*.yml
+!/cypress.json
+!/README.md
+!/cypress/
+!/cypress/**
+!/pipeline/
+!/pipeline/**
+!.eslintrc.js
+!.eslintignore
+!.prettierrc.js
+!package.json
+!package-lock.json
+!cypress.config.js
+!puppeteer.js
+!.vscode
+!.vscode/**
+pipeline/artifacts
+cypress/downloads
+cypress/integration/practice

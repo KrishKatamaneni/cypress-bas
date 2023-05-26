@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  cypress:
+    container_name: cypress
+    image: gitlab.buyandsell.gc.ca:4567/qa/cypress
+    restart: "no"
+    volumes:
+      - .:/src
+      - ./pipeline/artifacts:/home/docker/artifacts
+    ports:
+      - 6901:6901

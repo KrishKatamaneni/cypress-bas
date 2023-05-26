@@ -1,0 +1,5 @@
+desktop
+docker-compose.yml
+package-lock.json
+project/fixtures
+scripts/*
