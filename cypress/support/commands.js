@@ -16,9 +16,12 @@ Cypress.Commands.add(`restoreSession`, function ({ cookies, lsd, ssd }) {
     });
   });
 
-  Cypress.Cookies.defaults({
-    preserve: wList,
-  });
+  // Cypress.Cookies.defaults({
+  //   preserve: wList,
+  // });
+  // cy.session({
+  //   preserve: wList,
+  // })
 
   cy.window().then((window) => {
     Object.keys(ssd).forEach((key) => window.sessionStorage.setItem(key, ssd[key]));
@@ -56,9 +59,12 @@ Cypress.Commands.add('origintmalogin', () => {
       });
     });
     cy.log(wList)
-    Cypress.Cookies.defaults({
-      preserve: wList,
-    });
+    // Cypress.Cookies.defaults({
+    //   preserve: wList,
+    // });
+    // cy.session({
+    //   preserve: wList,
+    // })
   
     cy.window().then((window) => {
       Object.keys(ssd).forEach((key) => window.sessionStorage.setItem(key, ssd[key]));
@@ -82,9 +88,13 @@ Cypress.Commands.add('originsosaalogin', () => {
       });
     });
     cy.log(wList)
-    Cypress.Cookies.defaults({
-      preserve: wList,
-    });
+    // Cypress.Cookies.defaults({
+    //   preserve: wList,
+    // });
+    // cy.session({
+    //   preserve: wList,
+    // })
+    // cy.setCookie("preserve",)
   
     cy.window().then((window) => {
       Object.keys(ssd).forEach((key) => window.sessionStorage.setItem(key, ssd[key]));

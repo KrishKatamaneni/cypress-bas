@@ -1,8 +1,28 @@
 const { defineConfig } = require("cypress");
 const { loginToTMA } = require("./puppeteer");
 const { loginToSOSAA } = require("./puppeteer");
-
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
 module.exports = defineConfig({
+  env: {
+    login_url: '/login',
+    base_url: 'https://test.',
+    mailHogUrl: 'https://beta.buyandsell.gc.ca/mailhog/',
+  },
+  e2e: {
+    setupNodeEvents(on, config) {
+      on('task', {
+        loginToTMA: loginToTMA
+      }),
+      on('task', {
+        loginToSOSAA: loginToSOSAA
+      })
+      on('task', {
+        downloadFile
+      })
+      return require('./cypress/plugins/index.js')(on, config);
+    },
+    specPattern: "**/*.feature",
+  },
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reporterEnabled: 'spec, mocha-junit-reporter',
@@ -24,18 +44,5 @@ module.exports = defineConfig({
   responseTimeout: 360000,
   requestTimeout: 360000,
   defaultCommandTimeout: 360000,
-  env: {
-    login_url: '/login',
-    base_url: 'https://test.',
-    mailHogUrl: 'https://beta.buyandsell.gc.ca/mailhog/',
-  },
-  e2e: {
-    setupNodeEvents(on, config) {
-      on('task', {
-        loginToTMA: loginToTMA
-      }),
-      on('task', {
-        loginToSOSAA: loginToSOSAA
-      })
-    }}
 });
+

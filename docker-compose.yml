@@ -9,3 +9,11 @@ services:
       - ./pipeline/artifacts:/home/docker/artifacts
     ports:
       - 6901:6901
+  chromium:  
+    container_name: chromium
+    image: overclockedllama/docker-chromium
+    build: .
+    ports:
+      - "5800:5800"
+    volumes:
+      - "/docker/appdata/chromium:/config:rw"

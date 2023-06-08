@@ -253,7 +253,7 @@ const typeUsername = async function({page, options} = {}) {
       throw err
     }
     }
-return baseLoginConnect(typeUsername,typePassword,{loginUrl: "https://beta.buyandsell.gc.ca/tma", username:'at-aut', password:'Provincial00', postLoginSelector:'#wb-cont', logs: true, getCookiesForAllDomains: true })
+return baseLoginConnect(typeUsername,typePassword,{loginUrl: "https://beta.buyandsell.gc.ca/tma", username:'at-pa', password:'Provincial00', postLoginSelector:'#wb-cont', logs: true, getCookiesForAllDomains: true })
 }
 
 module.exports.loginToTMA = loginToTMA
@@ -292,7 +292,7 @@ async function loginToSOSAA(){
         throw err
       }
       }
-  return baseLoginConnect(typeUsername,typePassword,{loginUrl: "https://beta.buyandsell.gc.ca/standing-offers-and-supply-arrangements-application", username:'at-alpha1', password:'Provincial00', postLoginSelector:'#wb-cont', logs: true, getCookiesForAllDomains: true })
+  return baseLoginConnect(typeUsername,typePassword,{loginUrl: "https://beta.buyandsell.gc.ca/standing-offers-and-supply-arrangements-application", username:'at-admin', password:'Provincial00', postLoginSelector:'#wb-cont', logs: true, getCookiesForAllDomains: true })
   }
   
   module.exports.loginToSOSAA = loginToSOSAA
