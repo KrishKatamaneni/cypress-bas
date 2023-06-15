@@ -43,8 +43,10 @@ Cypress.Commands.add('verifyCertifacteEndDate', (date, url) => {
     expect(certEndDate.getDate()).equal(assertDate.getDate());
   });
 });
-Cypress.Commands.add('origintmalogin', () => {
-  cy.task('loginToTMA').then(({cookies, ssd, lsd}) => {
+Cypress.Commands.add('origintmalogin', (logintype, username, password) => {
+  const options = {logintype:logintype, username:username, password:password}
+
+  cy.task('loginToTMA',options).then(({cookies, ssd, lsd}) => {
     const wList = [];
     cy.clearCookies();
     cookies.forEach((cookie) => {

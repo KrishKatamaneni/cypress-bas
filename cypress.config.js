@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const { loginToTMA } = require("./puppeteer");
 const { loginToSOSAA } = require("./puppeteer");
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
+
 module.exports = defineConfig({
   env: {
     login_url: '/login',

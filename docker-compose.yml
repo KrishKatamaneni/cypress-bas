@@ -9,11 +9,20 @@ services:
       - ./pipeline/artifacts:/home/docker/artifacts
     ports:
       - 6901:6901
-  chromium:  
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
     container_name: chromium
-    image: overclockedllama/docker-chromium
-    build: .
-    ports:
-      - "5800:5800"
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CHROME_CLI=https://www.linuxserver.io/ #optional
     volumes:
-      - "/docker/appdata/chromium:/config:rw"
+      - /path/to/config:/config
+    ports:
+      - 3000:3000
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
